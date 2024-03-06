@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
     margin: 0;
     padding: 0;
@@ -125,4 +129,15 @@ body {
     box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
-/* Tailwindcss Layar */
+/* Tailwind Styles */
+@layer components {
+    .checkbox__after {
+        @apply after:content-['\2713'] after:w-[1.6rem] after:h-[1.6rem] after:flex after:justify-center after:items-center after:text-[1.3rem] after:font-black border after:bg-cyan-950 after:text-white after:opacity-0 after:transition-[0.4s];
+    }
+    .search-preset-active {
+        @apply opacity-1 pointer-events-auto visible;
+    }
+    .search-preset-hidden {
+        @apply opacity-0 pointer-events-none invisible;
+    }
+}

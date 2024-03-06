@@ -11,9 +11,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
-        <link rel="stylesheet" href="./Styles/style.css" />
-        <script defer src="https://cdn.tailwindcss.com"></script>
-        <script defer src="./Scripts/tailwind.config.js"></script>
+        <link rel="stylesheet" href="./Styles/tailwind.css" />
         <script defer src="./Scripts/script.js"></script>
         <title>Asynchronous JavaScript</title>
     </head>
@@ -21,7 +19,7 @@
         <nav
             class="fixed top-0 w-full flex justify-center items-center bg-gray-400"
         >
-            <div class="search-container w-[40rem] text-[1.8rem]">
+            <div class="search-container w-[40rem] text-[1.8rem] relative">
                 <form class="search-field bg-pink-200 flex">
                     <button class="search-btn w-[10%]">
                         <i
@@ -30,11 +28,13 @@
                     </button>
                     <input
                         type="text"
-                        class="bg-transparent px-[1rem] w-[90%] focus:outline-none"
+                        placeholder="Enter countries..."
+                        class="search-input bg-transparent px-[1rem] w-[90%] focus:outline-none"
                     />
                 </form>
+
                 <div
-                    class="search-preset text-clifford bg-pink-200 mt-[1.5rem]"
+                    class="search-preset text-clifford bg-pink-200 mt-[1.5rem] absolute w-[40rem] search-preset-hidden"
                 >
                     <div class="borderCou-container">
                         <label class="borderCou__label">
@@ -44,7 +44,7 @@
                             />
                             Border countries
                             <span
-                                class="costume-checkbox after:content-['\2713'] after:w-[1.6rem] after:h-[1.6rem] rounded-[0.5rem] after:flex after:justify-center after:items-center after:text-[1.3rem] after:font-black border border-black inline-block after:bg-cyan-950 after:text-white after:opacity-0 after:transition-[0.4s]"
+                                class="costume-checkbox checkbox__after rounded-[0.5rem] border-black inline-block"
                             ></span>
                         </label>
                     </div>
