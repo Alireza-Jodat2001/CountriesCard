@@ -23,18 +23,31 @@
         >
             <div class="search-container w-[40rem] text-[1.8rem]">
                 <form class="search-field bg-pink-200 flex">
-                    <button class="search-btn border w-[10%]">
-                        <i class="fas fa-search"></i>
+                    <button class="search-btn w-[10%]">
+                        <i
+                            class="search-icon fas fa-search text-gray-600 text-[1.8rem]"
+                        ></i>
                     </button>
                     <input
                         type="text"
-                        class="bg-transparent px-[1rem] w-[90%]"
+                        class="bg-transparent px-[1rem] w-[90%] focus:outline-none"
                     />
                 </form>
                 <div
                     class="search-preset text-clifford bg-pink-200 mt-[1.5rem]"
                 >
-                    no result...
+                    <div class="borderCou-container">
+                        <label class="borderCou__label">
+                            <input
+                                type="checkbox"
+                                class="opacity-0 absolute [&:checked~.costume-checkbox:after]:opacity-[1]"
+                            />
+                            Border countries
+                            <span
+                                class="costume-checkbox after:content-['\2713'] after:w-[1.6rem] after:h-[1.6rem] rounded-[0.5rem] after:flex after:justify-center after:items-center after:text-[1.3rem] after:font-black border border-black inline-block after:bg-cyan-950 after:text-white after:opacity-0 after:transition-[0.4s]"
+                            ></span>
+                        </label>
+                    </div>
                 </div>
             </div>
         </nav>

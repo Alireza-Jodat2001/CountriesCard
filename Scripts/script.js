@@ -1,7 +1,8 @@
 'use strict';
 
-const btn = document.querySelector('.btn-country');
-const countriesContainer = document.querySelector('.countries');
+const btn = document.querySelector('.btn-country'),
+    countriesContainer = document.querySelector('.countries'),
+    form = document.querySelector('.search-field');
 
 ///////////////////////////////////////
 
@@ -46,3 +47,5 @@ request.addEventListener('load', function () {
         countriesContainer.style.opacity = 1;
     });
 });
+
+form.addEventListener('submit', e => e.preventDefault);
