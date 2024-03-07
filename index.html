@@ -16,8 +16,11 @@
         <title>Asynchronous JavaScript</title>
     </head>
     <body>
+        <div
+            class="backdrop content-[''] w-screen h-screen fixed bg-gray-950 transition-[0.4s] hide"
+        ></div>
         <nav
-            class="fixed top-0 w-full flex justify-center items-center bg-gray-400"
+            class="navbar fixed top-0 w-full flex justify-center items-center bg-gray-400"
         >
             <div class="search-container w-[40rem] text-[1.8rem] relative">
                 <form class="search-field bg-pink-200 flex">
@@ -34,7 +37,7 @@
                 </form>
 
                 <div
-                    class="search-preset text-clifford bg-pink-200 mt-[1.5rem] absolute w-[40rem] search-preset-hidden"
+                    class="search-preset text-clifford mt-[1.5rem] w-[40rem] absolute bg-pink-200 hide transition-[0.4s]"
                 >
                     <div class="borderCou-container">
                         <label class="borderCou__label">

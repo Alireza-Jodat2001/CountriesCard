@@ -5,7 +5,9 @@ const btn = document.querySelector('.btn-country'),
     form = document.querySelector('.search-field'),
     searchInput = form.querySelector('.search-input'),
     searchContainer = document.querySelector('.search-container'),
-    searchPreset = document.querySelector('.search-preset');
+    nav = document.querySelector('.navbar'),
+    searchPreset = document.querySelector('.search-preset'),
+    backdrop = document.querySelector('.backdrop');
 
 ///////////////////////////////////////
 
@@ -21,7 +23,7 @@ function createRequest(search) {
         requestJSON.forEach(country => extractingData(country));
     });
 }
-createRequest('all');
+// createRequest('all');
 
 // extracting data of fetch
 function extractingData(country) {
@@ -63,17 +65,42 @@ function createCardEl(argument) {
     countriesContainer.style.opacity = 1;
 }
 
-// showing search preset
-searchContainer.addEventListener('click', function (e) {
-    // console.log(this, e);
-    if (!searchPreset.classList.contains('search-preset-active')) {
-    }
-});
-
 // form submited
 form.addEventListener('submit', e => {
     e.preventDefault();
     countriesContainer.textContent = '';
     // Create Request
     createRequest(searchInput.value);
+});
+
+// Element Class
+class Element {
+    #element;
+    constructor(element) {
+        this.#element = element;
+    }
+    // show search preset
+    _showEl() {
+        this.#element.classList.replace('hide', 'show');
+    }
+    _hideEl() {
+        this.#element.classList.replace('show', 'hide');
+    }
+}
+// new Element instance of class
+const searchPresetC = new Element(searchPreset),
+    backdropC = new Element(backdrop);
+
+// navbar click event
+nav.addEventListener('click', e => {
+    const { target } = e;
+    if (target.closest('.search-container'))
+        [searchPresetC, backdropC].forEach(el => el._showEl());
+    else if (target.closest('.navbar'))
+        [searchPresetC, backdropC].forEach(el => el._hideEl());
+});
+
+// backdrop click event
+backdrop.addEventListener('click', function () {
+    [searchPresetC, backdropC].forEach(el => el._hideEl());
 });
