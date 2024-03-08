@@ -182,3 +182,32 @@ backdrop.addEventListener('click', function () {
 //       .then(res => res.json())
 //       .then(data => console.log(data));
 // }
+
+// JavaScript Course
+267;
+// Promise
+// ساختگی ایجاد کنیم Promise در ادامه میخواهیم یک
+// را در دو خط متوالی قرار دهیم Promise , setTimeOut در حالت کلی اگر یک
+// ها setTimeOut ها انجام میشوند و سپس microTask همانطور که میدانیم اول
+
+// 1. به صورت زنجیر وار نوشتن
+(() => {
+   let check = false;
+   const myPromise = new Promise((resolve, reject) => {
+      check ? resolve('I am S') : reject(new Error('I have a problem...'));
+   });
+   // consume promise
+   myPromise
+      .then(res => console.log(res))
+      .catch(err => console.log(err.message));
+})();
+
+// 2. به صورت جدا جدا
+(() => {
+   let check = false;
+   check && Promise.resolve('successfull...').then(res => console.log(res));
+   !check &&
+      Promise.reject(new Error('unSuccsessfull...')).catch(err =>
+         console.log(err.message)
+      );
+})();
